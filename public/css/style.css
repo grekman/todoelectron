@@ -1,0 +1,38 @@
+
+body {
+  background: #ffea00;
+}
+
+h1 {
+  text-align: center;
+  color: #424242;
+}
+
+.main {
+  background: #FFFFFF;
+  margin: 40px auto !important;
+  float: none !important;
+  padding-top: 15px !important;
+  padding-bottom: 15px !important;
+  border-radius: 5px;
+}
+
+.close, .start {
+  cursor: pointer !important;
+  line-height: 2 !important;
+}
+
+/*.p-icon {
+  margin: 0 5px;
+}*/
+
+.hidetask {
+  display: none;
+}
+.completed {
+  text-decoration: line-through;
+}
+
+button {
+  background: #424242 !important;
+}
