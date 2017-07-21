@@ -1,18 +1,26 @@
+import React, { Component} from 'react';
+import PropTypes from 'prop-types';
+import {Icon, CollectionItem } from 'react-materialize'
+
+
 var placeholder = document.createElement("li");
 placeholder.className = "placeholder";
 
-class List extends React.Component {
+export default class List extends Component {
+
   constructor(props) {
     super(props);
     this.state = { ...props };
   }
-  dragStart(e) {
+
+  dragStart = (e) => {
     console.log(e.currentTarget);
     this.dragged = e.currentTarget;
     e.dataTransfer.effectAllowed = "move";
     e.dataTransfer.setData("text/html", this.dragged);
   }
-  dragEnd(e) {
+
+  dragEnd = (e) => {
     this.dragged.style.display = "block";
     this.dragged.parentNode.removeChild(placeholder);
 
@@ -24,16 +32,19 @@ class List extends React.Component {
     data.splice(to, 0, data.splice(from, 1)[0]);
     this.setState({ colors: data });
   }
-  dragOver(e) {
+
+  dragOver = (e) => {
     e.preventDefault();
     this.dragged.style.display = "none";
     if (e.target.className === "placeholder") return;
     this.over = e.target;
     e.target.parentNode.insertBefore(placeholder, e.target);
   }
+
   render() {
     var listItems = this.state.colors.map((item, i) => {
       return (
+
         <li
           data-id={i}
           key={i}
@@ -43,15 +54,21 @@ class List extends React.Component {
         >
           {item}
         </li>
+
       );
     });
+
     return (
+
       <ul onDragOver={this.dragOver.bind(this)}>
         {listItems}
       </ul>
+
     );
   }
 }
+
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -62,10 +79,10 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <List colors={this.state.colors} />
+          <List colors={this.state.colors} />
       </div>
     );
   }
 }
 
-ReactDOM.render(<App />, document.getElementById("app"));
+// ReactDOM.render(<App />, document.getElementById("app"));

@@ -17,9 +17,10 @@ h1 {
   border-radius: 5px;
 }
 
-.close, .start {
+.close, .start, .pause {
   cursor: pointer !important;
   line-height: 2 !important;
+  padding: 0 10px;
 }
 
 /*.p-icon {
@@ -35,4 +36,21 @@ h1 {
 
 button {
   background: #424242 !important;
+}
+
+
+li {
+  padding: 10px 15px;
+  background: #eee;
+}
+li:hover {
+  background: #e1e1e1 !important;
+}
+
+.placeholder {
+  background: #fff078;
+}
+.placeholder:before {
+  content: "Drop here";
+  color: #e1d25a;
 }

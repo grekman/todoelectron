@@ -14,4 +14,12 @@ export const deleteTodo = id => ({
 
 export const clearCompleted = () => ({
   type: types.CLEAR_COMPLETED
+});
+
+export const activeTodo = id => ({
+  type: types.ACTIVE_TODO, id
+})
+
+export const inactiveTodo = id => ({
+  type: types.INACTIVE_TODO, id
 })

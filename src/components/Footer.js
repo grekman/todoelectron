@@ -15,7 +15,7 @@ export default class Footer extends Component {
   render() {
     return (
       <footer className="footer">
-        <Button waves='light' type="button" className="button__clear" onClick={this.clearCompl}>
+        <Button waves='light' type="button" className="button__clear hoverable" onClick={this.clearCompl}>
           Clear Completed
           <Icon right>delete</Icon>
         </Button>
